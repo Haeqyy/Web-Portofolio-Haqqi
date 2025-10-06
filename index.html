@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Muhammad Haqqi Azhari - Front-End Developer & UI/UX Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f2937', // Dark gray
+                        accent: '#3b82f6', // Blue
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom animations */
+        .fade-in { animation: fadeIn 1s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+    <!-- Header -->
+    <header class="bg-primary shadow-lg fixed w-full top-0 z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent">Muhammad Haqqi Azhari</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#about" class="hover:text-accent transition">About</a></li>
+                <li><a href="#education" class="hover:text-accent transition">Education</a></li>
+                <li><a href="#skills" class="hover:text-accent transition">Skills</a></li>
+                <li><a href="#projects" class="hover:text-accent transition">Projects</a></li>
+                <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+            </ul>
+            <button class="md:hidden">Menu</button> <!-- Mobile menu toggle -->
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-gradient-to-r from-primary to-gray-800 text-center">
+        <div class="container mx-auto px-6">
+            <img src="haqqigans.jpeg" alt="Foto Profil Haqqi" class="mx-auto rounded-full w-32 h-32 mb-4 border-4 border-accent">
+            <h2 class="text-4xl font-bold mb-2">Hi, I'm Muhammad Haqqi Azhari</h2>
+            <p class="text-xl text-gray-300 mb-6">Front-End Developer | UI/UX Design | Gamers Ganteng Idaman</p>
+            <a href="#contact" class="bg-accent text-white px-6 py-3 rounded-full hover:bg-blue-600 transition mr-2">Get in Touch</a>
+            <a href="CV_HaqqiAzhari.pdf" download class="bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-600 transition ml-2">Download CV</a>
+        </div>
+    </section>
+    
+    <!-- About Me -->
+    <section id="about" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">About Me</h2>
+            <div class="max-w-4xl mx-auto text-lg leading-relaxed fade-in">
+                <p>Saya adalah seorang Front-End Developer yang passionate dalam membangun antarmuka web yang responsif dan user-friendly. Dengan pengalaman di HTML, CSS, JavaScript, dan framework seperti React, saya suka menggabungkan desain dan kode untuk menciptakan pengalaman digital yang menakjubkan.</p>
+                <p>Selain coding, saya menikmati membaca buku tentang teknologi dan berkontribusi di komunitas open-source.</p>
+                <p>Saya suka membaca komik dan bermain game.</p>
+                <p>acivment game Saya:</p>
+                <p>1. Mobile Lagend Immortal 104</p>
+                <p>2. COC Th17</p>
+                <p>3. Free Fire Master</p>
+                <p>4. Valorant Immortal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Background -->
+    <section id="education" class="py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Educational Background</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-2">Sarjana Ilmu Komputer</h3>
+                    <p class="text-gray-300">Universitas MERCU BUANA, 2023-2026</p>
+                    <p>IPK: 3.8/4.0</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg fade-in">
+                    <h3 class="text-xl font-semibold mb-2">Bootcamp Front-End</h3>
+                    <p class="text-gray-300">Dicoding Academy, 2023</p>
+                    <p>Sertifikasi React & Tailwind CSS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Expertise -->
+    <section id="skills" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Skills & Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center fade-in">
+                    <h3 class="text-xl font-semibold mb-2">HTML/CSS</h3>
+                    <div class="bg-gray-700 rounded-full h-2">
+                        <div class="bg-accent rounded-full h-2 w-11/12"></div>
+                    </div>
+                </div>
+                <div class="text-center fade-in">
+                    <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
+                    <div class="bg-gray-700 rounded-full h-2">
+                        <div class="bg-accent rounded-full h-2 w-10/12"></div>
+                    </div>
+                </div>
+                <div class="text-center fade-in">
+                    <h3 class="text-xl font-semibold mb-2">React</h3>
+                    <div class="bg-gray-700 rounded-full h-2">
+                        <div class="bg-accent rounded-full h-2 w-9/12"></div>
+                    </div>
+                </div>
+                <!-- Tambah lebih banyak skills jika perlu -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects & Portfolio -->
+    <section id="projects" class="py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Projects & Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg fade-in">
+                    <img src="rsud.jpeg" alt="Project 1" class="w-full rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">RSUD Delima</h3>
+                    <p class="text-gray-300 mb-4">Website rumah sakit.</p>
+                    <a href="#" class="text-accent hover:underline">View Project</a> | <a href="#" class="text-accent hover:underline">GitHub</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg fade-in">
+                    <img src="pizzcing.jpeg" alt="Project 2" class="w-full rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Design PIZZCING</h3>
+                    <p class="text-gray-300 mb-4">Design Aplikasi Pemesanan Pizza.</p>
+                    <a href="#" class="text-accent hover:underline">View Project</a> | <a href="#" class="text-accent hover:underline">GitHub</a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg fade-in">
+                    <img src="https://via.placeholder.com/300x200?text=Project+3" alt="Project 3" class="w-full rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Portfolio Site</h3>
+                    <p class="text-gray-300 mb-4">Situs portfolio pribadi ini sendiri!</p>
+                    <a href="#" class="text-accent hover:underline">View Project</a> | <a href="#" class="text-accent hover:underline">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Get in Touch</h2>
+            <div class="max-w-md mx-auto fade-in">
+                <form class="space-y-4">
+                    <input type="text" placeholder="Nama Anda" class="w-full p-3 bg-gray-700 rounded text-white">
+                    <input type="email" placeholder="Email Anda" class="w-full p-3 bg-gray-700 rounded text-white">
+                    <textarea placeholder="Pesan Anda" rows="4" class="w-full p-3 bg-gray-700 rounded text-white"></textarea>
+                    <button type="submit" class="w-full bg-accent text-white py-3 rounded hover:bg-blue-600 transition">Kirim Pesan</button>
+                </form>
+                <div class="mt-8 text-center text-gray-300">
+                    <p>Email: haqqiazhari014@example.com</p>
+                    <p>LinkedIn: www.linkedin.com/in/muhammad-haqqi-azhari</p>
+                    <p>GitHub: https://github.com/Haeqyy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-6 text-center text-gray-300">
+        <p>&copy; 2025 muhammad-haqqi-azhari. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in on scroll (basic)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
