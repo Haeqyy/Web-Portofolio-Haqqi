@@ -26,69 +26,140 @@
 <body class="bg-gray-900 text-white font-sans">
 
     <!-- Header -->
-    <header class="bg-primary shadow-lg fixed w-full top-0 z-10">
+    <header class="bg-primary shadow-lg fixed w-full top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-accent">Muhammad Haqqi Azhari</h1>
-            <ul class="hidden md:flex space-x-6">
+            <ul class="hidden md:flex space-x-6" id="nav-links">
                 <li><a href="#about" class="hover:text-accent transition">About</a></li>
                 <li><a href="#education" class="hover:text-accent transition">Education</a></li>
                 <li><a href="#skills" class="hover:text-accent transition">Skills</a></li>
                 <li><a href="#projects" class="hover:text-accent transition">Projects</a></li>
                 <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
             </ul>
-            <button class="md:hidden">Menu</button> <!-- Mobile menu toggle -->
+            <button class="md:hidden" id="menu-btn">Menu</button>
         </nav>
+        <!-- Mobile menu -->
+        <ul id="mobile-menu" class="md:hidden bg-primary absolute w-full left-0 top-full hidden flex-col space-y-2 px-6 py-4 z-20">
+            <li><a href="#about" class="block py-2 hover:text-accent transition">About</a></li>
+            <li><a href="#education" class="block py-2 hover:text-accent transition">Education</a></li>
+            <li><a href="#skills" class="block py-2 hover:text-accent transition">Skills</a></li>
+            <li><a href="#projects" class="block py-2 hover:text-accent transition">Projects</a></li>
+            <li><a href="#contact" class="block py-2 hover:text-accent transition">Contact</a></li>
+        </ul>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-12 bg-gradient-to-r from-primary to-gray-800 text-center">
-        <div class="container mx-auto px-6">
-            <img src="haqqigans.jpeg" alt="Foto Profil Haqqi" class="mx-auto rounded-full w-32 h-32 mb-4 border-4 border-accent">
-            <h2 class="text-4xl font-bold mb-2">Hi, I'm Muhammad Haqqi Azhari</h2>
-            <p class="text-xl text-gray-300 mb-6">Front-End Developer | UI/UX Design | Gamers Ganteng Idaman</p>
-            <a href="#contact" class="bg-accent text-white px-6 py-3 rounded-full hover:bg-blue-600 transition mr-2">Get in Touch</a>
-            <a href="CV_HaqqiAzhari.pdf" download class="bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-600 transition ml-2">Download CV</a>
+    <section class="pt-32 pb-16 bg-gradient-to-r from-blue-900 via-primary to-gray-800 text-center relative overflow-hidden">
+        <!-- Animated Gradient Circles -->
+        <div class="absolute top-0 left-0 w-72 h-72 bg-blue-500 opacity-30 rounded-full blur-3xl animate-pulse z-0"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-accent opacity-20 rounded-full blur-3xl animate-pulse z-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="mx-auto w-fit bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 flex flex-col items-center gap-4 border border-white/20">
+                <img src="haqqigans.jpeg" alt="Foto Profil Haqqi"
+                    class="mx-auto rounded-full w-36 h-36 mb-2 border-4 border-accent shadow-2xl transition-transform duration-300 hover:scale-110 hover:rotate-3">
+                <h2 class="text-5xl font-extrabold mb-2 text-white drop-shadow-2xl tracking-tight">
+                    <span id="typed-title"></span>
+                    <span class="border-r-2 border-accent animate-pulse"></span>
+                </h2>
+                <p class="text-xl text-gray-200 mb-4 drop-shadow-lg font-medium">
+                    <span id="typed-text"></span>
+                    <span class="text-accent font-bold">|</span>
+                    UI/UX Design <span class="text-accent font-bold">|</span>
+                    Gamers Ganteng Idaman
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="#contact"
+                        class="bg-accent text-white px-8 py-3 rounded-full shadow-xl hover:bg-blue-600 hover:scale-105 hover:-translate-y-1 transition-all font-semibold text-lg border-2 border-accent">Get in Touch</a>
+                    <a href="CV_HaqqiAzhari.pdf" download
+                        class="bg-white/20 text-white px-8 py-3 rounded-full shadow-xl hover:bg-gray-700 hover:scale-105 hover:-translate-y-1 transition-all font-semibold text-lg border-2 border-white/30 backdrop-blur">Download CV</a>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- About Me -->
-    <section id="about" class="py-16 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 fade-in">About Me</h2>
-            <div class="max-w-4xl mx-auto text-lg leading-relaxed fade-in">
-                <p>Saya adalah seorang Front-End Developer yang passionate dalam membangun antarmuka web yang responsif dan user-friendly. Dengan pengalaman di HTML, CSS, JavaScript, dan framework seperti React, saya suka menggabungkan desain dan kode untuk menciptakan pengalaman digital yang menakjubkan.</p>
-                <p>Selain coding, saya menikmati membaca buku tentang teknologi dan berkontribusi di komunitas open-source.</p>
-                <p>Saya suka membaca komik dan bermain game.</p>
-                <p>acivment game Saya:</p>
-                <p>1. Mobile Lagend Immortal 104</p>
-                <p>2. COC Th17</p>
-                <p>3. Free Fire Master</p>
-                <p>4. Valorant Immortal</p>
+    <section id="about" class="pt-32 pb-16 bg-gray-800 relative overflow-hidden">
+        <!-- Decorative gradient circle -->
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-accent opacity-20 rounded-full blur-2xl"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-white/20 flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-shrink-0 flex flex-col items-center gap-2">
+                    <img src="haqqigans.jpeg" alt="Foto Profil Haqqi"
+                        class="rounded-full w-28 h-28 border-4 border-accent shadow-xl mb-2">
+                    <span class="text-accent font-bold text-lg">👨‍💻</span>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 text-white drop-shadow-lg">About Me</h2>
+                    <p class="text-lg text-gray-200 mb-2 leading-relaxed">Saya adalah seorang <span class="text-accent font-semibold">Front-End Developer</span> yang passionate membangun antarmuka web modern, responsif, dan user-friendly. Saya suka menggabungkan desain dan kode untuk menciptakan pengalaman digital yang menakjubkan.</p>
+                    <ul class="mb-4 text-gray-200 space-y-1">
+                        <li><span class="font-bold text-accent">💡 Skill:</span> HTML, CSS, JavaScript, React, UI/UX Design</li>
+                        <li><span class="font-bold text-accent">📚 Hobi:</span> Membaca buku teknologi, berkontribusi open-source, komik, dan gaming</li>
+                    </ul>
+                    <div class="bg-gray-900/60 rounded-xl p-4 shadow-lg">
+                        <h3 class="text-accent font-bold mb-2">🎮 Achievement Game Saya:</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-100 text-base">
+                            <li>
+                                Mobile Legend <span class="text-accent font-semibold">Immortal 104</span>
+                                <button onclick="showGameImage('ml')" class="ml-2 text-accent hover:underline text-sm">Lihat Akun</button>
+                            </li>
+                            <li>
+                                COC <span class="text-accent font-semibold">TH17</span>
+                                <button onclick="showGameImage('coc')" class="ml-2 text-accent hover:underline text-sm">Lihat Akun</button>
+                            </li>
+                            <li>
+                                Free Fire <span class="text-accent font-semibold">Master</span>
+                                <button onclick="showGameImage('ff')" class="ml-2 text-accent hover:underline text-sm">Lihat Akun</button>
+                            </li>
+                            <li>
+                                Valorant <span class="text-accent font-semibold">Immortal</span>
+                                <button onclick="showGameImage('valo')" class="ml-2 text-accent hover:underline text-sm">Lihat Akun</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Educational Background -->
-    <section id="education" class="py-16 bg-primary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Educational Background</h2>
+    <section id="education" class="pt-32 pb-16 bg-gradient-to-r from-primary via-gray-900 to-gray-800 relative overflow-hidden">
+        <!-- Decorative gradient circle -->
+        <div class="absolute -top-10 right-0 w-40 h-40 bg-accent opacity-20 rounded-full blur-2xl"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in drop-shadow-2xl text-white">Educational Background</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Sarjana Ilmu Komputer</h3>
-                    <p class="text-gray-300">Universitas MERCU BUANA, 2023-2026</p>
-                    <p>IPK: 3.8/4.0</p>
+                <!-- Card 1 -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-white/20 flex flex-col items-start gap-4 transform transition-transform duration-300 hover:scale-105 hover:-rotate-2 hover:shadow-accent">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-accent text-3xl">🎓</span>
+                        <h3 class="text-xl font-semibold text-white drop-shadow">Sarjana Ilmu Komputer</h3>
+                    </div>
+                    <p class="text-gray-200">Universitas MERCU BUANA, <span class="font-bold text-accent">2023-2026</span></p>
+                    <p class="text-gray-300">IPK: <span class="font-bold text-accent">3.57/4.0</span></p>
+                    <div class="mt-2 flex gap-2">
+                        <span class="bg-accent/30 text-accent px-3 py-1 rounded-full text-xs font-semibold">S1</span>
+                        <span class="bg-gray-700/40 text-gray-200 px-3 py-1 rounded-full text-xs">Aktif</span>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg fade-in">
-                    <h3 class="text-xl font-semibold mb-2">Bootcamp Front-End</h3>
-                    <p class="text-gray-300">Dicoding Academy, 2023</p>
-                    <p>Sertifikasi React & Tailwind CSS</p>
+                <!-- Card 2 -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-white/20 flex flex-col items-start gap-4 transform transition-transform duration-300 hover:scale-105 hover:rotate-2 hover:shadow-accent">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-accent text-3xl">💻</span>
+                        <h3 class="text-xl font-semibold text-white drop-shadow">SMK MUHAMMADIYAH 9</h3>
+                    </div>
+                    <p class="text-gray-200">Perkantoran (OTKP), <span class="font-bold text-accent">2020-2023</span></p>
+                    <p class="text-gray-300">Sertifikasi <span class="font-bold text-accent">LAB OTKP</span></p>
+                    <div class="mt-2 flex gap-2">
+                        <span class="bg-accent/30 text-accent px-3 py-1 rounded-full text-xs font-semibold">Magang di MABES POLRI</span>
+                        <span class="bg-gray-700/40 text-gray-200 px-3 py-1 rounded-full text-xs">Lulus</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills & Expertise -->
-    <section id="skills" class="py-16 bg-gray-800">
+    <section id="skills" class="pt-32 pb-16 bg-gray-800">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 fade-in">Skills & Expertise</h2>
             <div class="grid md:grid-cols-3 gap-6">
@@ -116,26 +187,26 @@
     </section>
 
     <!-- Projects & Portfolio -->
-    <section id="projects" class="py-16 bg-primary">
+    <section id="projects" class="pt-32 pb-16 bg-primary">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Projects & Portfolio</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in drop-shadow-2xl">Projects & Portfolio</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg fade-in">
-                    <img src="rsud.jpeg" alt="Project 1" class="w-full rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">RSUD Delima</h3>
+                <div class="bg-gray-800 p-6 rounded-2xl fade-in shadow-2xl transform transition-transform duration-300 hover:scale-110 hover:-translate-y-2 hover:rotate-2">
+                    <img src="rsud.jpeg" alt="Project 1" class="w-full rounded mb-4 shadow-xl hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-2 drop-shadow-lg">RSUD Delima</h3>
                     <p class="text-gray-300 mb-4">Website rumah sakit.</p>
                     <a href="#" class="text-accent hover:underline">View Project</a> | <a href="#" class="text-accent hover:underline">GitHub</a>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg fade-in">
-                    <img src="pizzcing.jpeg" alt="Project 2" class="w-full rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Design PIZZCING</h3>
+                <div class="bg-gray-800 p-6 rounded-2xl fade-in shadow-2xl transform transition-transform duration-300 hover:scale-110 hover:-translate-y-2 hover:-rotate-2">
+                    <img src="pizzcing.jpeg" alt="Project 2" class="w-full rounded mb-4 shadow-xl hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-2 drop-shadow-lg">Design PIZZCING</h3>
                     <p class="text-gray-300 mb-4">Design Aplikasi Pemesanan Pizza.</p>
                     <a href="#" class="text-accent hover:underline">View Project</a> | <a href="#" class="text-accent hover:underline">GitHub</a>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg fade-in">
-                    <img src="https://via.placeholder.com/300x200?text=Project+3" alt="Project 3" class="w-full rounded mb-4">
-                    <h3 class="text-xl font-semibold mb-2">Portfolio Site</h3>
-                    <p class="text-gray-300 mb-4">Situs portfolio pribadi ini sendiri!</p>
+                <div class="bg-gray-800 p-6 rounded-2xl fade-in shadow-2xl transform transition-transform duration-300 hover:scale-110 hover:-translate-y-2 hover:rotate-2">
+                    <img src="TokoOnline.png" alt="Project 3" class="w-full rounded mb-4 shadow-xl hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold mb-2 drop-shadow-lg">Portfolio Site</h3>
+                    <p class="text-gray-300 mb-4">Membuat Toko Online berbasis Web!</p>
                     <a href="#" class="text-accent hover:underline">View Project</a> | <a href="#" class="text-accent hover:underline">GitHub</a>
                 </div>
             </div>
@@ -143,15 +214,15 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-16 bg-gray-800">
+    <section id="contact" class="pt-32 pb-16 bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Get in Touch</h2>
-            <div class="max-w-md mx-auto fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in drop-shadow-2xl">Get in Touch</h2>
+            <div class="max-w-md mx-auto fade-in shadow-2xl rounded-2xl p-6 bg-gray-900">
                 <form class="space-y-4">
-                    <input type="text" placeholder="Nama Anda" class="w-full p-3 bg-gray-700 rounded text-white">
-                    <input type="email" placeholder="Email Anda" class="w-full p-3 bg-gray-700 rounded text-white">
-                    <textarea placeholder="Pesan Anda" rows="4" class="w-full p-3 bg-gray-700 rounded text-white"></textarea>
-                    <button type="submit" class="w-full bg-accent text-white py-3 rounded hover:bg-blue-600 transition">Kirim Pesan</button>
+                    <input type="text" placeholder="Nama Anda" class="w-full p-3 bg-gray-700 rounded-lg text-white shadow-lg focus:scale-105 transition-transform duration-300">
+                    <input type="email" placeholder="Email Anda" class="w-full p-3 bg-gray-700 rounded-lg text-white shadow-lg focus:scale-105 transition-transform duration-300">
+                    <textarea placeholder="Pesan Anda" rows="4" class="w-full p-3 bg-gray-700 rounded-lg text-white shadow-lg focus:scale-105 transition-transform duration-300"></textarea>
+                    <button type="submit" class="w-full bg-accent text-white py-3 rounded-lg hover:bg-blue-600 transition shadow-xl hover:scale-105">Kirim Pesan</button>
                 </form>
                 <div class="mt-8 text-center text-gray-300">
                     <p>Email: haqqiazhari014@example.com</p>
@@ -166,6 +237,15 @@
     <footer class="bg-primary py-6 text-center text-gray-300">
         <p>&copy; 2025 muhammad-haqqi-azhari. All rights reserved.</p>
     </footer>
+
+    <!-- Modal Popup -->
+    <div id="game-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 rounded-2xl shadow-2xl p-6 relative max-w-xs w-full">
+            <button onclick="closeGameModal()" class="absolute top-2 right-2 text-accent text-xl font-bold">&times;</button>
+            <img id="game-modal-img" src="" alt="Akun Game" class="rounded-xl mb-4 w-full h-auto">
+            <div id="game-modal-title" class="text-center text-white font-bold"></div>
+        </div>
+    </div>
 
     <script>
         // Simple smooth scroll
@@ -187,6 +267,103 @@
             });
         });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Animasi ketik di Hero Section
+        const typedText = document.getElementById('typed-text');
+        const words = [
+            'Ganteng Abis',
+            'Softspoken',
+            'Rajin Mengaji',
+            'Tidak Sombong'
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                charIndex--;
+                typedText.textContent = currentWord.substring(0, charIndex);
+            } else {
+                charIndex++;
+                typedText.textContent = currentWord.substring(0, charIndex);
+            }
+
+            let typeSpeed = isDeleting ? 50 : 120;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 1200;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        typeEffect();
+
+        // Animasi ketik di judul Hero Section
+        const typedTitle = document.getElementById('typed-title');
+        const titleText = "Hi, I'm Muhammad Haqqi Azhari";
+        let titleIndex = 0;
+
+        function typeTitleEffect() {
+            if (titleIndex <= titleText.length) {
+                typedTitle.textContent = titleText.substring(0, titleIndex);
+                titleIndex++;
+                setTimeout(typeTitleEffect, 80);
+            }
+        }
+        typeTitleEffect();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Optional: close mobile menu when link clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Show game image in modal
+        function showGameImage(game) {
+            const modal = document.getElementById('game-modal');
+            const img = document.getElementById('game-modal-img');
+            const title = document.getElementById('game-modal-title');
+            let src = '';
+            let label = '';
+            switch(game) {
+                case 'ml':
+                    src = 'ML.jpeg'; label = 'Mobile Legend Akun';
+                    break;
+                case 'coc':
+                    src = 'akun_coc.png'; label = 'COC Akun';
+                    break;
+                case 'ff':
+                    src = 'akun_ff.png'; label = 'Free Fire Akun';
+                    break;
+                case 'valo':
+                    src = 'Valorant.png'; label = 'Valorant Akun';
+                    break;
+            }
+            img.src = src;
+            title.textContent = label;
+            modal.classList.remove('hidden');
+        }
+
+        // Close game modal
+        function closeGameModal() {
+            document.getElementById('game-modal').classList.add('hidden');
+        }
     </script>
 
 </body>
