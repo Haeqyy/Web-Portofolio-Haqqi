@@ -48,6 +48,19 @@
         </ul>
     </header>
 
+    <!-- Audio Player (Hidden) -->
+    <audio id="audioPlayer" preload="auto" loop>
+        <source src="multo.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Audio Control Button (Fixed di pojok kanan bawah) -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <button id="audioToggle" class="bg-accent text-white p-3 rounded-full shadow-xl hover:bg-blue-600 hover:scale-110 transition-all duration-300">
+            <span id="audioIcon">▶️</span>
+        </button>
+    </div>
+
     <!-- Hero Section -->
     <section class="pt-32 pb-16 bg-gradient-to-r from-blue-900 via-primary to-gray-800 text-center relative overflow-hidden">
         <!-- Video Background -->
@@ -166,29 +179,152 @@
     <!-- Skills & Expertise -->
     <section id="skills" class="pt-32 pb-16 bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Skills & Expertise</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="text-center fade-in">
-                    <h3 class="text-xl font-semibold mb-2">HTML/CSS</h3>
-                    <div class="bg-gray-700 rounded-full h-2">
-                        <div class="bg-accent rounded-full h-2 w-11/12"></div>
+            <h2 class="text-3xl font-bold text-center mb-10 fade-in text-white">Skills & Expertise</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Radial skill charts -->
+                <div class="grid grid-cols-3 gap-6 justify-items-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-36 h-36 relative">
+                            <svg class="skill-svg" viewBox="0 0 100 100" width="144" height="144">
+                                <circle cx="50" cy="50" r="36" class="stroke-bg" stroke-width="8" fill="none" stroke-linecap="round" />
+                                <circle cx="50" cy="50" r="36" class="skill-circle" stroke="#3b82f6" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="226.2" stroke-dashoffset="226.2" transform="rotate(-90 50 50)"/>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <div class="text-white font-bold text-lg">HTML</div>
+                                <div class="text-accent font-extrabold text-2xl percentage" data-target="92">0%</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-sm text-gray-300">Markup & Semantics</div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-36 h-36 relative">
+                            <svg class="skill-svg" viewBox="0 0 100 100" width="144" height="144">
+                                <circle cx="50" cy="50" r="36" class="stroke-bg" stroke-width="8" fill="none" stroke-linecap="round" />
+                                <circle cx="50" cy="50" r="36" class="skill-circle" stroke="#06b6d4" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="226.2" stroke-dashoffset="226.2" transform="rotate(-90 50 50)"/>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <div class="text-white font-bold text-lg">CSS</div>
+                                <div class="text-accent font-extrabold text-2xl percentage" data-target="88">0%</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-sm text-gray-300">Responsive & Animations</div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-36 h-36 relative">
+                            <svg class="skill-svg" viewBox="0 0 100 100" width="144" height="144">
+                                <circle cx="50" cy="50" r="36" class="stroke-bg" stroke-width="8" fill="none" stroke-linecap="round" />
+                                <circle cx="50" cy="50" r="36" class="skill-circle" stroke="#f97316" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="226.2" stroke-dashoffset="226.2" transform="rotate(-90 50 50)"/>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <div class="text-white font-bold text-lg">JS</div>
+                                <div class="text-accent font-extrabold text-2xl percentage" data-target="80">0%</div>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-sm text-gray-300">Interaction & Logic</div>
                     </div>
                 </div>
-                <div class="text-center fade-in">
-                    <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
-                    <div class="bg-gray-700 rounded-full h-2">
-                        <div class="bg-accent rounded-full h-2 w-10/12"></div>
+
+                <!-- Detailed bars -->
+                <div class="space-y-6">
+                    <div class="bg-white/5 p-4 rounded-2xl shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <div>
+                                <h4 class="text-white font-semibold">React</h4>
+                                <p class="text-sm text-gray-300">Components, Hooks & State</p>
+                            </div>
+                            <div class="text-accent font-bold">75%</div>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="bar bg-gradient-to-r from-accent to-blue-400 h-3 w-0 rounded-full" data-target="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 p-4 rounded-2xl shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <div>
+                                <h4 class="text-white font-semibold">UI/UX</h4>
+                                <p class="text-sm text-gray-300">Figma, Prototyping</p>
+                            </div>
+                            <div class="text-accent font-bold">82%</div>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="bar bg-gradient-to-r from-indigo-500 to-pink-500 h-3 w-0 rounded-full" data-target="82"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 p-4 rounded-2xl shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <div>
+                                <h4 class="text-white font-semibold">Versioning</h4>
+                                <p class="text-sm text-gray-300">Git & GitHub workflow</p>
+                            </div>
+                            <div class="text-accent font-bold">90%</div>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="bar bg-gradient-to-r from-green-400 to-emerald-500 h-3 w-0 rounded-full" data-target="90"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="text-center fade-in">
-                    <h3 class="text-xl font-semibold mb-2">React</h3>
-                    <div class="bg-gray-700 rounded-full h-2">
-                        <div class="bg-accent rounded-full h-2 w-9/12"></div>
-                    </div>
-                </div>
-                <!-- Tambah lebih banyak skills jika perlu -->
             </div>
+
+            <p class="text-center text-sm text-gray-400 mt-6">Persentase menunjukkan pengalaman relatif — selalu belajar dan meningkatkan kemampuan.</p>
         </div>
+
+        <style>
+            /* small local styles to enhance SVG visuals */
+            .stroke-bg { stroke: rgba(255,255,255,0.08); }
+            .skill-circle { transition: stroke-dashoffset 1.2s cubic-bezier(.2,.9,.2,1); }
+            .percentage { transition: all 0.6s ease; }
+        </style>
+
+        <script>
+            // animate skill charts and bars when visible
+            (function() {
+                const skillsSection = document.getElementById('skills');
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) return;
+                        // Animate radial circles
+                        document.querySelectorAll('.skill-svg').forEach((svg, i) => {
+                            const percentEl = svg.parentElement.querySelector('.percentage');
+                            const target = Number(percentEl.getAttribute('data-target'));
+                            const circle = svg.querySelector('.skill-circle');
+                            const r = circle.getAttribute('r');
+                            const c = 2 * Math.PI * r;
+                            circle.setAttribute('stroke-dasharray', c);
+                            const offset = c * (1 - target / 100);
+                            // small timeout to allow transition
+                            setTimeout(() => circle.setAttribute('stroke-dashoffset', offset), i * 120);
+                            // animate number
+                            let current = 0;
+                            const step = Math.max(1, Math.round(target / 30));
+                            const t = setInterval(() => {
+                                current += step;
+                                if (current >= target) {
+                                    current = target;
+                                    clearInterval(t);
+                                }
+                                percentEl.textContent = current + '%';
+                            }, 18 + i*4);
+                        });
+
+                        // Animate bars
+                        document.querySelectorAll('.bar').forEach((bar, idx) => {
+                            const t = Number(bar.getAttribute('data-target'));
+                            setTimeout(() => {
+                                bar.style.width = t + '%';
+                            }, 300 + idx * 120);
+                        });
+
+                        obs.unobserve(skillsSection);
+                    });
+                }, { threshold: 0.25 });
+                observer.observe(skillsSection);
+            })();
+        </script>
     </section>
 
     <!-- Projects & Portfolio -->
@@ -369,6 +505,29 @@
         function closeGameModal() {
             document.getElementById('game-modal').classList.add('hidden');
         }
+
+        // Audio Player Control
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioToggle = document.getElementById('audioToggle');
+        const audioIcon = document.getElementById('audioIcon');
+
+        audioToggle.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                audioIcon.textContent = '⏸️'; // Icon pause
+            } else {
+                audioPlayer.pause();
+                audioIcon.textContent = '▶️'; // Icon play
+            }
+        });
+
+        // Update icon on play/pause events
+        audioPlayer.addEventListener('play', () => {
+            audioIcon.textContent = '⏸️';
+        });
+        audioPlayer.addEventListener('pause', () => {
+            audioIcon.textContent = '▶️';
+        });
     </script>
 
 </body>
